@@ -365,6 +365,27 @@ section .div a:hover {
     text-decoration: none;
 }
 
+#sectionCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#cards {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 300px;
+    border-radius: 8px
+}
+
+#btnCard {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2em;

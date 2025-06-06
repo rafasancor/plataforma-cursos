@@ -9,20 +9,18 @@
     <?php
 
     ?>
-    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div id="sectionCard">
         <?php if (!empty($featuredCourses)): ?>
             <?php foreach ($featuredCourses as $courseData):
                 $course = $courseData['curso_obj'];
                 $alunosMatriculados = $courseData['total_alunos_matriculados'] ?? 0;
                 ?>
-                <div style="border: 1px solid #ccc; padding: 15px; width: 300px; border-radius: 8px;">
+                <div id="cards">
                     <h3><?= htmlspecialchars($course->getNome()) ?></h3>
                     <p><?= htmlspecialchars($course->getDescricao()) ?></p>
                     <p><strong>Preço:</strong> R$ <?= number_format($course->getPreco(), 2, ',', '.') ?></p>
                     <p><small>Alunos matriculados: <?= htmlspecialchars($alunosMatriculados) ?></small></p>
-                    <a href="?p=cursos"
-                        style="background-color: #007bff; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px;">Ver
-                        Detalhes</a>
+                    <a href="?p=cursos" id="btnCard">Ver Detalhes</a>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
