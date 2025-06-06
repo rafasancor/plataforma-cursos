@@ -1,6 +1,5 @@
 <?php
-// session_start(); // Ensure session is started for AuthController checks
-// session_destroy()
+
 use App\Controller\AuthController;
 ?>
 <a href="./?p=home">Home</a>
