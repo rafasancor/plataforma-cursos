@@ -1,14 +1,13 @@
-/* Variáveis de Cores */
 :root {
-    --primary-color: #007bff; /* Azul vibrante para elementos principais (botões, links ativos) */
-    --secondary-color: #17a2b8; /* Azul ciano para detalhes e interatividade secundária */
-    --text-color-dark: #333; /* Texto principal escuro */
-    --text-color-light: #666; /* Texto secundário, descrições */
-    --background-color-light: #f4f7f6; /* Fundo claro para o corpo */
-    --background-color-white: #ffffff; /* Fundo branco para seções e cards */
-    --border-color: #ddd; /* Cor de borda suave */
-    --accent-color: #ffc107; /* Amarelo para destaques ou alertas (mantido para contraste) */
-    --error-color: #dc3545; /* Vermelho para mensagens de erro (ajustado para Bootstrap red) */
+    --primary-color: #007bff; 
+    --secondary-color: #17a2b8; 
+    --text-color-dark: #333; 
+    --text-color-light: #666; 
+    --background-color-light: #f4f7f6; 
+    --background-color-white: #ffffff; 
+    --border-color: #ddd; 
+    --accent-color: #ffc107; 
+    --error-color: #dc3545; 
 }
 
 * {
@@ -68,15 +67,15 @@ header {
     padding: 1em 2em;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: center; /* Centraliza o menu */
+    justify-content: center; 
     align-items: center;
 }
 
 nav {
     display: flex;
     gap: 1.5em;
-    flex-wrap: wrap; /* Permite que os itens do menu quebrem a linha */
-    justify-content: center; /* Centraliza itens em telas menores */
+    flex-wrap: wrap; 
+    justify-content: center;
 }
 
 nav a {
@@ -105,7 +104,7 @@ nav span {
 }
 
 main {
-    flex: 1; /* Ocupa o espaço restante */
+    flex: 1;
     padding: 2em;
     max-width: 1200px;
     margin: 2em auto;
@@ -279,13 +278,13 @@ table tbody tr:hover {
     font-weight: 500;
 }
 
-.alert.success { /* Para mensagens de sucesso, como "Cadastrado com sucesso!" */
+.alert.success { 
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-.alert { /* Estilo padrão para o alerta, que também serve para mensagens de erro/informação */
+.alert { 
     background-color: #ffeeba;
     color: #856404;
     border: 1px solid #ffc107;
@@ -300,25 +299,25 @@ table tbody tr:hover {
 }
 
 /* Cards de Destaque (Home) */
-section .div { /* Este é o div que contém os cards na home.php */
+section .div { 
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaço entre os cards */
-    justify-content: center; /* Centraliza os cards */
+    gap: 20px; 
+    justify-content: center; 
     margin-top: 1.5em;
 }
 
-section .div > div { /* Estilo para cada card individualmente */
+section .div > div { 
     border: 1px solid var(--border-color);
     padding: 1.5em;
-    width: 100%; /* Começa com largura total para responsividade */
-    max-width: 350px; /* Limite de largura para telas maiores */
+    width: 100%; 
+    max-width: 350px;
     border-radius: 8px;
     background-color: var(--background-color-white);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Garante que o botão fique no final */
+    justify-content: space-between; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -335,7 +334,7 @@ section .div h3 {
 section .div p {
     color: var(--text-color-light);
     margin-bottom: 1em;
-    flex-grow: 1; /* Permite que o parágrafo ocupe espaço antes do botão */
+    flex-grow: 1; 
 }
 
 section .div strong {
@@ -452,13 +451,11 @@ section .div a:hover {
         color: var(--primary-color);
     }
 
-    /* Ajuste para campos de tabela que são links */
     table td a {
         display: inline-block;
         margin: 0.2em 0;
     }
 
-    /* Esconde o 'Id' no modo responsivo se não for crucial para visualização */
     table td:first-child::before {
         content: "Id:";
     }
@@ -483,11 +480,10 @@ section .div a:hover {
     }
 
     section .div > div {
-        max-width: 100%; /* Garante que os cards ocupem a largura total em telas muito pequenas */
+        max-width: 100%;
     }
 }
 
-/* Estilos específicos para algumas páginas (se necessário, mas tente manter genérico) */
 #sobreNos ul, #sobreNos ol {
     margin-left: 20px;
     margin-bottom: 1em;
@@ -498,7 +494,7 @@ section .div a:hover {
 }
 
 /* Mensagem de Erro 404 */
-body > h1 { /* Direciona para o H1 principal fora de qualquer section */
+body > h1 {
     font-size: 3em;
     color: var(--error-color);
     text-align: center;
