@@ -1,18 +1,17 @@
--- Create database if not exists
-CREATE DATABASE IF NOT EXISTS aula; --
-USE aula; --
+CREATE DATABASE IF NOT EXISTS aula;
+USE aula;
 
--- Table for 'cursos'
+-- Tabela de 'cursos'
 CREATE TABLE IF NOT EXISTS cursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     descricao TEXT,
-    duracao INT, -- in hours, for example
+    duracao INT,
     preco DECIMAL(10, 2),
     status ENUM('ativo', 'inativo') DEFAULT 'ativo'
 );
 
--- Table for 'alunos'
+-- Tabela de 'alunos'
 CREATE TABLE IF NOT EXISTS alunos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -22,7 +21,7 @@ CREATE TABLE IF NOT EXISTS alunos (
     data_nascimento DATE NOT NULL
 );
 
--- Table for 'matriculas'
+-- Tabela de 'matriculas'
 CREATE TABLE IF NOT EXISTS matriculas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_aluno INT NOT NULL,
@@ -33,22 +32,19 @@ CREATE TABLE IF NOT EXISTS matriculas (
     FOREIGN KEY (id_curso) REFERENCES cursos(id) ON DELETE CASCADE
 );
 
--- Table for 'usuarios' (admin users) - this is a generic user table, if different from 'alunos'
--- If 'alunos' are the only users, then this table might not be strictly necessary,
--- but for admin roles, it's good to have a separate user table.
--- I'll assume 'alunos' are the public users, and 'usuarios' are administrators.
-CREATE TABLE IF NOT EXISTS usuarios ( --
-    id INT AUTO_INCREMENT PRIMARY KEY, --
-    email VARCHAR(255) UNIQUE NOT NULL, --
-    senha VARCHAR(255) NOT NULL, --
-    role ENUM('admin', 'user') DEFAULT 'user' -- To differentiate between admins and regular users
+-- Tabela de 'usuarios'
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user'
 );
 
-INSERT INTO usuarios (email, senha, role) 
-VALUES ('admin@gmail.com', '$2y$10$X6f8G0nE5KwDZ9BzIX9c6l7y88/dByZv4VVRauZlAcvZ1NeTwKzeq', 'admin');
+INSERT INTO usuarios (email, senha, role)
+VALUES ('admin@gmail.com', '$2y$10$70Lt/yt6M/NCvbocqqDCh.NaHkNx4KMa33QoJ.hN45CzZKaeQh4ze', 'admin');
 
-select * from alunos;
-
-
-INSERT INTO usuarios (email, senha, role) VALUES ('admin@gmail.com', '$2y$10$70Lt/yt6M/NCvbocqqDCh.NaHkNx4KMa33QoJ.hN45CzZKaeQh4ze', 'admin');
+-- select * from cursos;
+-- select * from alunos;
+-- select * from matriculas;
+-- select * from usuarios;
 
