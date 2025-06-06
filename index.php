@@ -46,34 +46,34 @@ require_once("./autoload.php");
             "cursos" => CursoController::listarCursosPublico(),
             "sobre_nos" => require_once("./view/sobreNos.php"),
 
-            // Authentication Routes
+            // Rotas de  autenticação
             "login" => AuthController::login(),
             "cadastro" => AuthController::register(),
             "recuperar_senha" => AuthController::recoverPassword(),
             "logout" => AuthController::logout(),
 
-            // Admin Routes (require admin authentication)
+            // Rotas de Administrador (requer autenticação de administrador)
             "admin_dashboard" => require_once("./view/admin/dashboard.php"),
 
-            // Curso CRUD for Admin
+            // Curso CRUD para administrador
             "admin_cursos_list" => CursoController::listarAdmin(),
             "admin_cursos_add" => CursoController::cadastrar(),
             "admin_cursos_edit" => CursoController::editar(),
             "admin_cursos_delete" => CursoController::deletar(),
 
-            // Aluno CRUD for Admin
+            // Aluno CRUD para administrador
             "admin_alunos_list" => AlunoController::listar(),
             "admin_alunos_add" => AlunoController::cadastrar(),
             "admin_alunos_edit" => AlunoController::editar(),
             "admin_alunos_delete" => AlunoController::deletar(),
 
-            // Matricula CRUD for Admin
+            // Matricula CRUD para administrador
             "admin_matriculas_list" => MatriculaController::listar(),
             "admin_matriculas_add" => MatriculaController::cadastrar(),
             "admin_matriculas_edit" => MatriculaController::editar(),
             "admin_matriculas_delete" => MatriculaController::deletar(),
 
-            // User Management for Admin (if a separate 'usuarios' table for admins exists)
+            // Gerenciamento de usuários para administradores
             "admin_usuarios_list" => \App\Controller\UsuarioController::listar(),
             "admin_usuarios_add" => \App\Controller\UsuarioController::cadastrar(),
             "admin_usuarios_edit" => \App\Controller\UsuarioController::editar(),
