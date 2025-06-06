@@ -1,0 +1,485 @@
+/* Variáveis de Cores */
+:root {
+    --primary-color: #007bff; /* Azul vibrante para elementos principais (botões, links ativos) */
+    --secondary-color: #17a2b8; /* Azul ciano para detalhes e interatividade secundária */
+    --text-color-dark: #333; /* Texto principal escuro */
+    --text-color-light: #666; /* Texto secundário, descrições */
+    --background-color-light: #f4f7f6; /* Fundo claro para o corpo */
+    --background-color-white: #ffffff; /* Fundo branco para seções e cards */
+    --border-color: #ddd; /* Cor de borda suave */
+    --accent-color: #ffc107; /* Amarelo para destaques ou alertas (mantido para contraste) */
+    --error-color: #dc3545; /* Vermelho para mensagens de erro (ajustado para Bootstrap red) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--background-color-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Layout Geral */
+header {
+    background-color: var(--background-color-white);
+    padding: 1em 2em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center; /* Centraliza o menu */
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem a linha */
+    justify-content: center; /* Centraliza itens em telas menores */
+}
+
+nav a {
+    color: var(--text-color-dark);
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+}
+
+nav #btnSair:hover {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+nav span {
+    padding: 0.5em 1em;
+    color: var(--text-color-light);
+}
+
+main {
+    flex: 1; /* Ocupa o espaço restante */
+    padding: 2em;
+    max-width: 1200px;
+    margin: 2em auto;
+    background-color: var(--background-color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: var(--background-color-white);
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #b0b0b0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5em;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color-white);
+}
+
+form label {
+    font-weight: 500;
+    margin-bottom: 0.2em;
+    color: var(--text-color-light);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="number"],
+form input[type="datetime-local"],
+form textarea,
+form select {
+    padding: 0.8em;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form input[type="number"]:focus,
+form input[type="datetime-local"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.9em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1em;
+}
+
+form button[type="reset"] {
+    background-color: var(--border-color);
+    color: var(--text-color-dark);
+    margin-left: 0.5em;
+}
+
+form button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: translateY(-2px);
+}
+
+form button[type="reset"]:hover {
+    background-color: darken(var(--border-color), 10%);
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+table th, table td {
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--background-color-light);
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Alertas e Mensagens */
+.alert {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.alert.success { /* Para mensagens de sucesso, como "Cadastrado com sucesso!" */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert { /* Estilo padrão para o alerta, que também serve para mensagens de erro/informação */
+    background-color: #ffeeba;
+    color: #856404;
+    border: 1px solid #ffc107;
+}
+
+.alert .close {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-left: 1em;
+}
+
+/* Cards de Destaque (Home) */
+section .div { /* Este é o div que contém os cards na home.php */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os cards */
+    justify-content: center; /* Centraliza os cards */
+    margin-top: 1.5em;
+}
+
+section .div > div { /* Estilo para cada card individualmente */
+    border: 1px solid var(--border-color);
+    padding: 1.5em;
+    width: 100%; /* Começa com largura total para responsividade */
+    max-width: 350px; /* Limite de largura para telas maiores */
+    border-radius: 8px;
+    background-color: var(--background-color-white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o botão fique no final */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .div > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+section .div h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5em;
+}
+
+section .div p {
+    color: var(--text-color-light);
+    margin-bottom: 1em;
+    flex-grow: 1; /* Permite que o parágrafo ocupe espaço antes do botão */
+}
+
+section .div strong {
+    color: var(--text-color-dark);
+}
+
+section .div small {
+    display: block;
+    margin-top: 0.5em;
+    color: var(--text-color-light);
+    font-size: 0.85em;
+}
+
+section .div a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7em 1.2em;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+section .div a:hover {
+    background-color: darken(var(--primary-color), 10%);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    main {
+        margin: 1em auto;
+        padding: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a, nav span {
+        width: 100%;
+        text-align: center;
+        padding: 0.8em 1em;
+    }
+
+    form {
+        padding: 1em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid var(--border-color);
+        margin-bottom: 1em;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: var(--background-color-white);
+    }
+
+    table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        font-size: 0.9em;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 1em;
+        font-weight: bold;
+        text-align: left;
+        color: var(--primary-color);
+    }
+
+    /* Ajuste para campos de tabela que são links */
+    table td a {
+        display: inline-block;
+        margin: 0.2em 0;
+    }
+
+    /* Esconde o 'Id' no modo responsivo se não for crucial para visualização */
+    table td:first-child::before {
+        content: "Id:";
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    form button {
+        font-size: 1em;
+        padding: 0.8em 1em;
+    }
+
+    section .div > div {
+        max-width: 100%; /* Garante que os cards ocupem a largura total em telas muito pequenas */
+    }
+}
+
+/* Estilos específicos para algumas páginas (se necessário, mas tente manter genérico) */
+#sobreNos ul, #sobreNos ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+#sobreNos li {
+    margin-bottom: 0.5em;
+}
+
+/* Mensagem de Erro 404 */
+body > h1 { /* Direciona para o H1 principal fora de qualquer section */
+    font-size: 3em;
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 3em;
+}
