@@ -10,7 +10,7 @@ abstract class Conn
     private static string $host = "localhost";
     private static string $dbName = "aula";
     private static string $usuario = "root";
-    private static string $senha = "Rafaestu0.";
+    private static string $senha = "";
 
     public static function getConn(): PDO
     {

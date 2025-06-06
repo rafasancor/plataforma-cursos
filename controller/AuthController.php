@@ -79,7 +79,6 @@ abstract class AuthController
     {
         session_unset();
         session_destroy();
-        // Clear cookies if "remember me" was implemented
         if (isset($_COOKIE['remember_me'])) {
             setcookie('remember_me', '', time() - 3600, '/');
         }
