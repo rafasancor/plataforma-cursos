@@ -72,7 +72,7 @@ O projeto segue uma arquitetura MVC (Model-View-Controller) com uma camada de ac
 
 1.  **Clone o Repositório**:
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/rafasancor/plataforma-cursos.git
     cd plataforma-cursos
     ```
 
