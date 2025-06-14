@@ -1,4 +1,4 @@
-# plataforma-cursos
+# Plataforma de Cursos
 
 Este projeto é uma plataforma de cursos online desenvolvida em PHP, criada para a disciplina de Desenvolvimento de Sistemas.
 
